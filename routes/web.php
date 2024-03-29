@@ -20,6 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/FeNewsIndex', App\Livewire\Frontend\News\FeNewsIndex::class)->name('fe.news.index');
+Route::get('/FeNewsShow', App\Livewire\Frontend\News\FeNewsShow::class)->name('fe.news.show');
 
 
 // 如果客戶沒有做會員註冊，就直接轉址到登入頁面

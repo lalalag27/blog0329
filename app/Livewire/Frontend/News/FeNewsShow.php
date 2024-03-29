@@ -3,7 +3,8 @@
 namespace App\Livewire\Frontend\News;
 
 use Livewire\Component;
-
+use Livewire\Attributes\Layout;
+#[Layout('components.layouts.guest')]
 class FeNewsShow extends Component
 {
     public function render()
