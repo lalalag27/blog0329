@@ -11,21 +11,25 @@
                 news & topics
             </div>
             <div class="pt-12 grid grid-cols-3 gap-x-5 gap-y-20">
-                <a href="/FeNewsShow" class=" space-y-6">
-                    <div class="p-20 bg-[#cac9bd]">
-                        <img src="https://platinumlist.net/guide/wp-content/uploads/2023/03/8359_img_worlds_of_adventure-big1613913137.jpg-1024x683.webp"
-                            alt="" class=" aspect-[330/220] w-full  object-cover">
-                    </div>
-                    <div class=" space-y-3">
-                        <p>2023.11.27</p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo eum distinctio saepe
-                            Totam unde qui magnam recusandae? Recusandae, error necessitatibus?
-                        </p>
-                    </div>
+                {{-- {{ dd($news) }} --}}
+                @foreach ($news as $new)
+                    <a href="{{ route('fe.news.show', ['slug' => $new->slug]) }}" class=" space-y-6">
+                        <div class="p-20 bg-[#cac9bd]">
+                            <img src="{{ $new->pic }}" alt="{{ $new->title }}"
+                                class=" aspect-[330/220] w-full  object-cover">
+                        </div>
+                        <div class=" space-y-3">
+                            <p>
+                                {{ $new->updated_at->format('Y.m.d') }}
+                            </p>
+                            <p>
+                                {{ Str::limit($new->body, 50, '...') }}
+                            </p>
+                        </div>
+                    </a>
+                @endforeach
 
-                </a>
-                
+
             </div>
 
 

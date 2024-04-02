@@ -17,7 +17,11 @@ class NewsFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            //建立假資料
+            'title' => $this->faker->sentence(3),
+            'slug' => $this->faker->slug(),
+            'pic' => $this->faker->imageUrl(), // 使用 Faker 的 imageUrl 方法,
+            'body' => $this->faker->paragraph(5),
         ];
     }
 }

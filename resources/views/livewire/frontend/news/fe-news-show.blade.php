@@ -4,21 +4,24 @@
     </header>
     <main class="border-t border-[#eee] text-[#4f545a]">
         <div class=" w-[80%] mx-auto">
-            <div class="pt-7 text-3xl">
+            <a href="/FeNewsIndex" class="pt-7 text-3xl">
                 news
-            </div>
+            </a>
             <div class="pt-12">
                 <section class="flex justify-center space-x-6">
                     <div class="p-20 bg-[#cac9bd]">
-                        <img src="https://platinumlist.net/guide/wp-content/uploads/2023/03/8359_img_worlds_of_adventure-big1613913137.jpg-1024x683.webp"
+                        <img src="{{ $news->pic }}"
                             alt="" class=" aspect-[330/220] w-full  object-cover">
                     </div>
                     <div class=" space-y-3">
-                        <p>2023.11.27</p>
-                        <p>標題</p>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo eum distinctio saepe
-                            Totam unde qui magnam recusandae? Recusandae, error necessitatibus?
+                            {{ $news->updated_at->format('Y.m.d') }}
+                        </p>
+                        <p>
+                            {{ $news->title }}
+                        </p>
+                        <p>
+                            {{ $news->body }}
                         </p>
                     </div>
 

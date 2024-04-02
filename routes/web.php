@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/FeNewsIndex', App\Livewire\Frontend\News\FeNewsIndex::class)->name('fe.news.index');
-Route::get('/FeNewsShow', App\Livewire\Frontend\News\FeNewsShow::class)->name('fe.news.show');
+Route::get('/FeNewsShow/{slug}', App\Livewire\Frontend\News\FeNewsShow::class)->name('fe.news.show');
 
 
 // 如果客戶沒有做會員註冊，就直接轉址到登入頁面
@@ -52,6 +52,11 @@ Route::prefix('admin')->middleware([
 
     // 後台首頁
     Route::get('/dashboard', App\Livewire\Backend\Dashboard\DashboardShow::class)->name('admin.dashboard');
+
+    Route::get('/newsshow', App\Livewire\Backend\news\BeNewsshow::class)->name('admin.newsshow');
+    Route::get('/newsedit/{id}', App\Livewire\Backend\news\BeNewsEdit::class)->name('admin.newsedit');
+
+
 });
 
 
