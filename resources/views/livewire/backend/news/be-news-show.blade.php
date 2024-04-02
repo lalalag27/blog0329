@@ -127,6 +127,12 @@
 
 
                                 <!-- 圖片-->
+                                <div class="w-full lg:w-24" x-show="true">
+                                    <div class="relative pt-[100%]">
+                                        <img src="{{ self::getImageUrl($example->pic) }}" alt=""
+                                            class="absolute top-0 left-0 object-cover w-full h-full border rounded dark:border-zinc-600">
+                                    </div>
+                                </div>
                                 {{-- <div class="w-full lg:w-24" x-show="false">
                                     <div class="relative pt-[100%]">
                                         <!-- 如果有多張圖片使用 App\Livewire\Backend\Traits\GetImgUrl\WithGetImgUrl -->
@@ -140,7 +146,9 @@
                                 <!-- 內容 -->
                                 <section class="w-48 max-w-full space-y-2" x-show="true">
                                     <p class="text-xs">{{ $example->created_at->format('Y.m.d') }}</p>
-                                    <p class="font-bold">{{ $example->name }}<sup class="px-1">客戶名稱</sup></p>
+                                    <p class="font-bold">{{ $example->title }}
+                                        {{-- <sup class="px-1">客戶名稱</sup> --}}
+                                    </p>
                                 </section>
 
                                 <!-- 項目按鈕列 -->
@@ -194,7 +202,7 @@
                                         <x-dropdown-link href="{{ route('admin.newsedit', $example->id) }}">
                                             {{ __('編輯') }}
                                         </x-dropdown-link>
-                                    </x-slot> 
+                                    </x-slot>
                                 </x-dropdown-bottom>
                             </section>
                         </div>

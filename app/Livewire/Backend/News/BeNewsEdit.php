@@ -40,11 +40,11 @@ class BeNewsEdit extends Component
             News::find($this->id)->update([
                 'title' => $this->title,
                 'slug' => $this->slug,
-                'body' => $this->email,
-                'is_active' => $this->is_active,
+                'body' => $this->body,
+
             ]);
             session()->flash('flash.banner', '編輯成功');
-            redirect()->route('admin.newsedit');
+            redirect()->route('admin.newsshow');
         } else {
            
         }

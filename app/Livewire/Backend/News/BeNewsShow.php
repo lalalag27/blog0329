@@ -8,6 +8,7 @@ use Livewire\Attributes\Url;
 use Livewire\WithPagination;
 use Livewire\Attributes\Rule;
 use Livewire\Attributes\Locked;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Backend\Traits\WithChildPage;
 use App\Livewire\Backend\Traits\Search\WithSearch;
@@ -92,7 +93,7 @@ class BeNewsShow extends Component
         // 驗證
         $this->validateOnly('orderNum');
         //如果是管理員才可以更新
-        // Auth::user() && Example::find($this->selectId)->update(['order_num' => $this->orderNum]);
+         Auth::user() && News::find($this->selectId)->update(['order_num' => $this->orderNum]);
         
         News::find($this->selectId)->update(['order_num' => $this->orderNum]);
         // 關閉視窗

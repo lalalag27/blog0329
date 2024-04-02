@@ -25,7 +25,7 @@
                 <form wire:submit="save" class="space-y-10">
 
                     <!-- 範本主分類 -->
-                    <div>
+                    {{-- <div>
                         <x-label for="product_category_id" value="{{ __('產品主分類') }}" />
                         <x-select id="product_category_id" wire:model.live="product_category_id"
                             class="block w-full mt-1">
@@ -37,23 +37,31 @@
                             @endforeach
                         </x-select>
                         <x-input-error for="product_category_id" class="mt-2" />
-                    </div>
-
+                    </div> --}}
 
 
                     <!-- 範本名稱 -->
                     <div>
-                        <x-label for="title" value="{{ __('範本名稱') }}" />
+                        <x-label for="title" value="{{ __('標題') }}" />
                         <x-input id="title" type="text" class="block w-full mt-1" wire:model="title"
                             autocomplete="title" />
                         <x-input-error for="title" class="mt-2" />
                     </div>
 
+                    <!-- slug名稱 -->
+                    <div>
+                        <x-label for="slug" value="{{ __('網址名稱') }}" />
+                        <x-input id="slug" type="text" class="block w-full mt-1" wire:model="slug"
+                            autocomplete="slug" />
+                        <x-input-error for="slug" class="mt-2" />
+                    </div>
+
+
                     <!-- 範本編輯器 -->
                     <div>
-                        <x-label for="content" value="{{ __('範本敘述') }}" />
-                        <x-tinymce-editor id="content" wire:model="content" />
-                        <x-input-error for="content" class="mt-2" />
+                        <x-label for="body" value="{{ __('內文') }}" />
+                        <x-tinymce-editor id="body" wire:model="body" />
+                        <x-input-error for="body" class="mt-2" />
                     </div>
 
                     <!-- 保存送出 -->
