@@ -15,7 +15,7 @@
                 @foreach ($news as $new)
                     <a href="{{ route('fe.news.show', ['slug' => $new->slug]) }}" class=" space-y-6">
                         <div class="p-20 bg-[#cac9bd]">
-                            <img src="{{ $new->pic }}" alt="{{ $new->title }}"
+                            <img src="{{ self::getImageUrl($new->pic) }}" alt="{{ $new->title }}"
                                 class=" aspect-[330/220] w-full  object-cover">
                         </div>
                         <div class=" space-y-3">

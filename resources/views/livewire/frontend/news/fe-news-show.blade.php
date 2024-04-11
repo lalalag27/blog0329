@@ -10,7 +10,7 @@
             <div class="pt-12">
                 <section class="flex justify-center space-x-6">
                     <div class="p-20 bg-[#cac9bd]">
-                        <img src="{{ $news->pic }}"
+                        <img src="{{ self::getImageUrl($news->pic) }}"
                             alt="" class=" aspect-[330/220] w-full  object-cover">
                     </div>
                     <div class=" space-y-3">

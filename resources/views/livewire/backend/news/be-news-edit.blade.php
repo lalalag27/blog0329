@@ -40,6 +40,23 @@
                     </div> --}}
 
 
+                    <!-- img -->
+                    <div>
+                        {{-- 判斷image是否有 --}}
+                        <label for="pic">Image:</label>
+                        <input type="file" wire:model.live="uploadImg" id="pic">
+
+                        @error('uploadImg')
+                            <span>{{ $message }}</span>
+                        @enderror
+
+                        <div class="max-w-[300px] overflow-hidden rounded-lg">
+                            <img src="{{ $uploadImg ? $uploadImg->temporaryUrl() : self::getImageUrl($news->pic) }}"
+                                alt="{{ $news->img }}"
+                                class=" aspect-[16/9] w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
+                        </div>
+                    </div>
+
                     <!-- 範本名稱 -->
                     <div>
                         <x-label for="title" value="{{ __('標題') }}" />

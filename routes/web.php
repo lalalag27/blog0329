@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/FeNewsIndex', App\Livewire\Frontend\News\FeNewsIndex::class)->name('fe.news.index');
+Route::get('/', App\Livewire\Frontend\News\FeNewsIndex::class)->name('fe.news.index');
 Route::get('/FeNewsShow/{slug}', App\Livewire\Frontend\News\FeNewsShow::class)->name('fe.news.show');
 
 

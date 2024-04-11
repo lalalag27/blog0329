@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Frontend\News;
 
+use App\Livewire\Backend\Traits\GetImgUrl\WithGetImgUrl;
 use App\Models\News;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
@@ -9,6 +10,7 @@ use Livewire\Attributes\Layout;
 #[Layout('components.layouts.guest')]
 class FeNewsIndex extends Component
 {
+    use WithGetImgUrl;
     public $news;
     //傳入網址參數
     protected $queryString = ['news'];

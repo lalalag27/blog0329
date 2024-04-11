@@ -5,9 +5,11 @@ namespace App\Livewire\Frontend\News;
 use App\Models\News;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
+use App\Livewire\Backend\Traits\GetImgUrl\WithGetImgUrl;
 #[Layout('components.layouts.guest')]
 class FeNewsShow extends Component
 {
+    use WithGetImgUrl;
     public $slug;
 
 
